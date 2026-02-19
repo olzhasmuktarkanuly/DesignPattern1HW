@@ -5,23 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acc5c11b-e2a3-4ef2-83b6-8b8130423b0c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/character/Archer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/character/Mage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/character/Warrior.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/equipment/Armor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/equipment/Weapon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/factory/ArcherFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/factory/CharacterFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/factory/MageFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/factory/WarriorFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/Enemy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/ability/Ability.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/ability/fire/FireShield.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/ability/fire/FlameBreath.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/ability/shadow/ShadowStrike.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/ability/shadow/Vanish.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/builder/BasicEnemyBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/builder/BossEnemyBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/builder/EnemyBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/builder/EnemyDirector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/factory/EnemyComponentFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/factory/fire/FireComponentFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/factory/shadow/ShadowComponentFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/loot/LootTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/loot/lootFire/FireLootTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/loot/lootShadow/ShadowLootTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/prototype/EnemyCloner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/prototype/EnemyPrototype.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/prototype/EnemyRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +35,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -49,16 +54,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "C:/Users/mukta/IdeaProjects/untitled/src/main/java/org/example/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mukta/IdeaProjects/DesignPattern1&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/mukta/IdeaProjects/untitled/src/main/java/org/example/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.narxoz.rpg.Main" />
