@@ -36,7 +36,21 @@ public class Enemy implements Cloneable {
         this.loot = loot;
         this.ai = ai;
     }
+    public int getDamage() {
+        return damage;
+    }
 
+    public void applyDamage(int amount) {
+        this.health -= amount;
+    }
+
+    public boolean isAlive() {
+        return health > 0;
+    }
+
+    public String getName() {
+        return name;
+    }
     public void addPhase(int phaseNumber, int healthThreshold) {
         phases.put(phaseNumber, healthThreshold);
     }
@@ -84,7 +98,7 @@ public class Enemy implements Cloneable {
             throw new RuntimeException(e);
         }
     }
-
     public void setElement(String element) { this.element = element; }
     public void setAbilities(List<Ability> abilities) { this.abilities = abilities; }
+
 }

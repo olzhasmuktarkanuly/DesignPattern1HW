@@ -25,4 +25,19 @@ public abstract class GameCharacter {
     }
 
     public abstract void useSpecialAbility();
+    public String getName() {
+        return name;
+    }
+
+    public int getAttackPower() {
+        return strength; // логично: сила = урон
+    }
+
+    public void takeDamage(int amount) {
+        this.health -= amount;
+    }
+
+    public boolean isAlive() {
+        return health > 0;
+    }
 }

@@ -5,27 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acc5c11b-e2a3-4ef2-83b6-8b8130423b0c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/Enemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/ability/Ability.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/ability/fire/FireShield.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/ability/fire/FlameBreath.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/ability/shadow/ShadowStrike.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/ability/shadow/Vanish.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/builder/BasicEnemyBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/builder/BossEnemyBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/builder/EnemyBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/builder/EnemyDirector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/factory/EnemyComponentFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/factory/fire/FireComponentFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/factory/shadow/ShadowComponentFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/loot/LootTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/loot/lootFire/FireLootTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/loot/lootShadow/ShadowLootTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/prototype/EnemyCloner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/prototype/EnemyPrototype.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/prototype/EnemyRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/adapter/CharacterCombatantAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/adapter/Combatant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/adapter/EnemyCombatantAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/battle/BattleEngine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/battle/EncounterResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/character/GameCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/character/GameCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/narxoz/rpg/enemy/Enemy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

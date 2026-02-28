@@ -1,5 +1,9 @@
 package com.narxoz.rpg;
 
+import com.narxoz.rpg.adapter.CharacterCombatantAdapter;
+import com.narxoz.rpg.adapter.Combatant;
+import com.narxoz.rpg.battle.BattleEngine;
+import com.narxoz.rpg.battle.EncounterResult;
 import com.narxoz.rpg.character.GameCharacter;
 import com.narxoz.rpg.enemy.Enemy;
 import com.narxoz.rpg.enemy.builder.BasicEnemyBuilder;
@@ -25,6 +29,9 @@ import com.narxoz.rpg.enemy.Enemy;
 import com.narxoz.rpg.enemy.builder.BossEnemyBuilder;
 import com.narxoz.rpg.enemy.builder.BasicEnemyBuilder;
 import com.narxoz.rpg.enemy.factory.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Main {
@@ -76,58 +83,98 @@ public class Main {
         System.out.println("Armor: " + a3.getArmorInfo());*/
         
 
-                FireComponentFactory fireFactory = new FireComponentFactory();
-                IceComponentFactory iceFactory = new IceComponentFactory();
-                ShadowComponentFactory shadowFactory = new ShadowComponentFactory();
+//                FireComponentFactory fireFactory = new FireComponentFactory();
+//                IceComponentFactory iceFactory = new IceComponentFactory();
+//                ShadowComponentFactory shadowFactory = new ShadowComponentFactory();
+//
+//                System.out.println("Fire factory components: " + fireFactory.createAbilities() +
+//                        " | Loot: " + fireFactory.createLootTable() +
+//                        " | AI: " + fireFactory.createAI());
+//                System.out.println("Ice factory components: " + iceFactory.createAbilities() +
+//                        " | Loot: " + iceFactory.createLootTable() +
+//                        " | AI: " + iceFactory.createAI());
+//
+//                System.out.println("Shadow factory components: " + shadowFactory.createAbilities() +
+//                        " | Loot: " + shadowFactory.createLootTable() +
+//                        " | AI: " + shadowFactory.createAI());
+//
+//
+//                  Enemy fireDragon = new BossEnemyBuilder()
+//                        .setName("Ancient Fire Dragon")
+//                        .setHealth(50000)
+//                        .setDamage(500)
+//                        .setAbilities(fireFactory.createAbilities())
+//                        .setLootTable(fireFactory.createLootTable())
+//                        .setAI(fireFactory.createAI())
+//                        .addPhase(1, 50000)
+//                        .addPhase(2, 30000)
+//                        .addPhase(3, 15000)
+//                        .build();
+//
+//                fireDragon.show();
+//
+//                Enemy iceOrc = new BasicEnemyBuilder()
+//                        .setName("Ice Orc")
+//                        .setHealth(1000)
+//                        .setDamage(100)
+//                        .setAbilities(iceFactory.createAbilities())
+//                        .setLootTable(iceFactory.createLootTable())
+//                        .setAI(iceFactory.createAI())
+//                        .build();
+//                  iceOrc.show();
+//
+//                Enemy shadowDemon = new BossEnemyBuilder()
+//                        .setName("Shadow Demon")
+//                        .setHealth(8000)
+//                        .setDamage(300)
+//                        .setAbilities(shadowFactory.createAbilities())
+//                        .setLootTable(shadowFactory.createLootTable())
+//                        .setAI(shadowFactory.createAI())
+//                        .addPhase(1, 8000)
+//                        .addPhase(2, 5000)
+//                        .build();
+//
+//                shadowDemon.show();
 
-                System.out.println("Fire factory components: " + fireFactory.createAbilities() +
-                        " | Loot: " + fireFactory.createLootTable() +
-                        " | AI: " + fireFactory.createAI());
-                System.out.println("Ice factory components: " + iceFactory.createAbilities() +
-                        " | Loot: " + iceFactory.createLootTable() +
-                        " | AI: " + iceFactory.createAI());
 
-                System.out.println("Shadow factory components: " + shadowFactory.createAbilities() +
-                        " | Loot: " + shadowFactory.createLootTable() +
-                        " | AI: " + shadowFactory.createAI());
+        BattleEngine e1 = BattleEngine.getInstance();
+        BattleEngine e2 = BattleEngine.getInstance();
+
+        System.out.println("Same instance: " + (e1 == e2));
 
 
-                  Enemy fireDragon = new BossEnemyBuilder()
-                        .setName("Ancient Fire Dragon")
-                        .setHealth(50000)
-                        .setDamage(500)
-                        .setAbilities(fireFactory.createAbilities())
-                        .setLootTable(fireFactory.createLootTable())
-                        .setAI(fireFactory.createAI())
-                        .addPhase(1, 50000)
-                        .addPhase(2, 30000)
-                        .addPhase(3, 15000)
-                        .build();
+        GameCharacter warrior = new GameCharacter("Warrior", 100, 20, 25, 5) {
+            public void useSpecialAbility() {}
+        };
 
-                fireDragon.show();
+        GameCharacter mage = new GameCharacter("Mage", 70, 100, 10, 30) {
+            public void useSpecialAbility() {}
+        };
 
-                Enemy iceOrc = new BasicEnemyBuilder()
-                        .setName("Ice Orc")
-                        .setHealth(1000)
-                        .setDamage(100)
-                        .setAbilities(iceFactory.createAbilities())
-                        .setLootTable(iceFactory.createLootTable())
-                        .setAI(iceFactory.createAI())
-                        .build();
-                  iceOrc.show();
+        GameCharacter enemy = new GameCharacter("Orc", 120, 0, 20, 0) {
+            public void useSpecialAbility() {}
+        };
 
-                Enemy shadowDemon = new BossEnemyBuilder()
-                        .setName("Shadow Demon")
-                        .setHealth(8000)
-                        .setDamage(300)
-                        .setAbilities(shadowFactory.createAbilities())
-                        .setLootTable(shadowFactory.createLootTable())
-                        .setAI(shadowFactory.createAI())
-                        .addPhase(1, 8000)
-                        .addPhase(2, 5000)
-                        .build();
+        // ✅ адаптеры
+        Combatant c1 = new CharacterCombatantAdapter(warrior);
+        Combatant c2 = new CharacterCombatantAdapter(mage);
+        Combatant c3 = new CharacterCombatantAdapter(enemy);
 
-                shadowDemon.show();
+        List<Combatant> teamA = new ArrayList<>();
+        teamA.add(c1);
+        teamA.add(c2);
+
+        List<Combatant> teamB = new ArrayList<>();
+        teamB.add(c3);
+
+
+        BattleEngine engine = BattleEngine.getInstance();
+        engine.setRandomSeed(42);
+
+        EncounterResult result = engine.runEncounter(teamA, teamB);
+
+        System.out.println("\n=== RESULT ===");
+        System.out.println(result.getWinner() + " wins!");
 
             }
         }
